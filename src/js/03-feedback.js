@@ -1,13 +1,12 @@
 import throttle from 'lodash.throttle'; 
 
-// refs
+
 const feedbackFormRef = document.querySelector('.feedback-form');
 const emailRef = document.querySelector('input[name="email"]');
 const messageRef = document.querySelector('textarea[name="message"]');
 
-// add event listener 
-feedbackFormRef.addEventListener('input', throttle(onFeedBackFormInput, 500));
 
+feedbackFormRef.addEventListener('input', throttle(onFeedBackFormInput, 500));
 feedbackFormRef.addEventListener('submit', onFeedBackFormSubmit);
 
 // fill inputs if we have not submited data in local storage
