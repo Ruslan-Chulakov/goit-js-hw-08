@@ -17,9 +17,12 @@ function saveVideoTimeInLokalStorage(e) {
 };
 
 // set the time to start video if page was reloaded
-player.setCurrentTime(JSON.parse(localStorage.getItem('videoplayer-current-time')));
 
+if(localStorage.getItem('videoplayer-current-time')) {
+    player.setCurrentTime(JSON.parse(localStorage.getItem('videoplayer-current-time')));
+};
 
 //change custom video file in player
 const playerRef = document.querySelector('#vimeo-player');
 playerRef.src = 'https://player.vimeo.com/video/730716638';
+
